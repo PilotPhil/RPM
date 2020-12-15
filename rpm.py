@@ -52,6 +52,15 @@ def GetAllPointsFromXls(xlsData):
 
     return points
 
+# 多点连成线
+def ConnectPoints2Lines(model=0):
+    pointsId = rs.GetObjects("选取多个点", rs.filter.point)
+    if model==0:
+        rs.AddInterpCurve(pointsId)
+    elif model==1:
+        rs.AddCurve(pointsId)
+    else:
+        pass
 
 
 
